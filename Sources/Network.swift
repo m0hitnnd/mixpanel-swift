@@ -46,6 +46,11 @@ struct Resource<A> {
 }
 
 public struct ServerProxyResource {
+    internal init(queryItems: [URLQueryItem]? = nil, headers: [String : String]) {
+        self.queryItems = queryItems
+        self.headers = headers
+    }
+    
     let queryItems: [URLQueryItem]?
     let headers: [String: String]
 }
