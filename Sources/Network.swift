@@ -51,6 +51,11 @@ public struct ServerProxyResource {
 }
 
 public struct ProxyServerConfig {
+    public init(serverUrl: String, delegate: MixpanelProxyServerDelegate? = nil) {
+        self.serverUrl = serverUrl
+        self.delegate = delegate
+    }
+    
     let serverUrl: String
     let delegate: MixpanelProxyServerDelegate?
 }
