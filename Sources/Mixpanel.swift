@@ -56,6 +56,25 @@ open class Mixpanel {
                                                          superProperties: superProperties,
                                                          serverURL: serverURL)
     }
+    
+    @discardableResult
+    open class func initialize(token apiToken: String,
+                               trackAutomaticEvents: Bool,
+                               flushInterval: Double = 60,
+                               instanceName: String? = nil,
+                               optOutTrackingByDefault: Bool = false,
+                               useUniqueDistinctId: Bool = false,
+                               superProperties: Properties? = nil,
+                               proxyServerConfig: ProxyServerConfig) -> MixpanelInstance {
+        return MixpanelManager.sharedInstance.initialize(token: apiToken,
+                                                         flushInterval: flushInterval,
+                                                         instanceName: ((instanceName != nil) ? instanceName! : apiToken),
+                                                         trackAutomaticEvents: trackAutomaticEvents,
+                                                         optOutTrackingByDefault: optOutTrackingByDefault,
+                                                         useUniqueDistinctId: useUniqueDistinctId,
+                                                         superProperties: superProperties,
+                                                         proxyServerConfig: proxyServerConfig)
+    }
 #else
     /**
      Initializes an instance of the API with the given project token (MAC OS ONLY).
@@ -192,6 +211,37 @@ final class MixpanelManager {
                                         useUniqueDistinctId: useUniqueDistinctId,
                                         superProperties: superProperties,
                                         serverURL: serverURL)
+            readWriteLock.write {
+                instances[instanceName] = instance!
+                mainInstance = instance!
+            }
+        }
+        return mainInstance!
+    }
+    
+    func initialize(token apiToken: String,
+                    flushInterval: Double,
+                    instanceName: String,
+                    trackAutomaticEvents: Bool,
+                    optOutTrackingByDefault: Bool = false,
+                    useUniqueDistinctId: Bool = false,
+                    superProperties: Properties? = nil,
+                    proxyServerConfig: ProxyServerConfig
+    ) -> MixpanelInstance {
+        instanceQueue.sync {
+            var instance: MixpanelInstance?
+            if let instance = instances[instanceName] {
+                mainInstance = instance
+                return
+            }
+            instance = MixpanelInstance(apiToken: apiToken,
+                                        flushInterval: flushInterval,
+                                        name: instanceName,
+                                        trackAutomaticEvents: trackAutomaticEvents,
+                                        optOutTrackingByDefault: optOutTrackingByDefault,
+                                        useUniqueDistinctId: useUniqueDistinctId,
+                                        superProperties: superProperties,
+                                        proxyServerConfig: proxyServerConfig)
             readWriteLock.write {
                 instances[instanceName] = instance!
                 mainInstance = instance!
