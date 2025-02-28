@@ -79,6 +79,15 @@ func application(_ application: UIApplication,
 ```
 [See all configuration options](https://mixpanel.github.io/mixpanel-swift/Classes/MixpanelInstance.html)
 
+### GZIP Compression
+You can enable GZIP compression for request payloads to reduce network bandwidth usage:
+```swift
+let mixpanel = Mixpanel.mainInstance()
+mixpanel.useGzipCompression = true
+```
+
+This option can significantly reduce the size of network requests, especially when sending large batches of events.
+
 ## 3. Send Data
 Let's get started by sending event data. You can send an event from anywhere in your application. Better understand user behavior by storing details that are specific to the event (properties). After initializing the library, Mixpanel will [automatically collect common mobile events](https://mixpanel.com/help/questions/articles/which-common-mobile-events-can-mixpanel-collect-on-my-behalf-automatically). You can enable/disable automatic collection through your [project settings](https://help.mixpanel.com/hc/en-us/articles/115004596186#enable-or-disable-common-mobile-events). Also, Mixpanel automatically tracks some properties by default. [learn more](https://help.mixpanel.com/hc/en-us/articles/115004613766-Default-Properties-Collected-by-Mixpanel#iOS)
 ```swift
@@ -149,4 +158,3 @@ No worries, here are some links that you will find useful:
 * **[Full API Reference](https://mixpanel.github.io/mixpanel-swift)**
 
 Have any questions? Reach out to Mixpanel [Support](https://help.mixpanel.com/hc/en-us/requests/new) to speak to someone smart, quickly.
-

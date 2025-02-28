@@ -11,7 +11,7 @@ import Foundation
 protocol FlushDelegate: AnyObject {
     func flush(performFullFlush: Bool, completion: (() -> Void)?)
     func flushSuccess(type: FlushType, ids: [Int32])
-    
+
     #if os(iOS)
     func updateNetworkActivityIndicator(_ on: Bool)
     #endif // os(iOS)
@@ -21,6 +21,11 @@ class Flush: AppLifecycle {
     var timer: Timer?
     weak var delegate: FlushDelegate?
     var useIPAddressForGeoLocation = true
+    var useGzipCompression = false {
+        didSet {
+            flushRequest.useGzipCompression = useGzipCompression
+        }
+    }
     var flushRequest: FlushRequest
     var flushOnBackground = true
     var _flushInterval = 0.0
@@ -28,7 +33,7 @@ class Flush: AppLifecycle {
     private var _serverURL =  BasePath.DefaultMixpanelAPI
     private let flushRequestReadWriteLock: DispatchQueue
 
-    
+
     var serverURL: String {
         get {
             flushRequestReadWriteLock.sync {
@@ -42,7 +47,7 @@ class Flush: AppLifecycle {
             })
         }
     }
-    
+
     var flushInterval: Double {
         get {
             flushRequestReadWriteLock.sync {
@@ -58,7 +63,7 @@ class Flush: AppLifecycle {
             startFlushTimer()
         }
     }
-    
+
     var flushBatchSize: Int {
         get {
             return _flushBatchSize
@@ -153,7 +158,7 @@ class Flush: AppLifecycle {
             }
         }
     }
-    
+
     func removeProcessedBatch(batchSize: Int, queue: Queue, type: FlushType) -> Queue {
         var shadowQueue = queue
         let range = 0..<batchSize
@@ -175,4 +180,3 @@ class Flush: AppLifecycle {
     }
 
 }
-
