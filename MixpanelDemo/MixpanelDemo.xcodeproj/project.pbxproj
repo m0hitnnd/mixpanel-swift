@@ -49,6 +49,7 @@
 		86F86F2122460B3300B69832 /* MixpanelDemoTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F86F2022460B3300B69832 /* MixpanelDemoTVUITests.swift */; };
 		86F86F2E22460B4F00B69832 /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16C35E41D872045003500AC /* Mixpanel.framework */; };
 		86F86F2F22460B4F00B69832 /* Mixpanel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E16C35E41D872045003500AC /* Mixpanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5B4D45B2D7A33B100356C6A /* MixpanelGzipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4D45A2D7A33B100356C6A /* MixpanelGzipTests.swift */; };
 		E1016E361D3D46DF00075BB7 /* ActionCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1016E351D3D46DF00075BB7 /* ActionCompleteViewController.swift */; };
 		E12406201D249B2500383635 /* MixpanelBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124061F1D249B2500383635 /* MixpanelBaseTests.swift */; };
 		E12BD03D1D8A14F3008989C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E12BD03C1D8A14F3008989C9 /* Assets.xcassets */; };
@@ -301,6 +302,7 @@
 		86F86F1C22460B3200B69832 /* MixpanelDemoTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixpanelDemoTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F86F2022460B3300B69832 /* MixpanelDemoTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixpanelDemoTVUITests.swift; sourceTree = "<group>"; };
 		86F86F2222460B3300B69832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B4D45A2D7A33B100356C6A /* MixpanelGzipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixpanelGzipTests.swift; sourceTree = "<group>"; };
 		E1016E351D3D46DF00075BB7 /* ActionCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCompleteViewController.swift; sourceTree = "<group>"; };
 		E124061F1D249B2500383635 /* MixpanelBaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelBaseTests.swift; sourceTree = "<group>"; };
 		E12BD03C1D8A14F3008989C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 		E15FF7EA1D0461130076CDE3 /* MixpanelDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				A5B4D45A2D7A33B100356C6A /* MixpanelGzipTests.swift */,
 				E124061F1D249B2500383635 /* MixpanelBaseTests.swift */,
 				E15FF7EB1D0461130076CDE3 /* MixpanelDemoTests.swift */,
 				E1C61EB91D22F6470056C56C /* MixpanelPeopleTests.swift */,
@@ -1109,6 +1112,7 @@
 				673ABE4321405A0500B1784B /* MixpanelGroupTests.swift in Sources */,
 				51DD568A1D3077390045D3DB /* LoggerTests.swift in Sources */,
 				862773E3206B3B1D00CBE79E /* MixpanelOptOutTests.swift in Sources */,
+				A5B4D45B2D7A33B100356C6A /* MixpanelGzipTests.swift in Sources */,
 				E1C61EBA1D22F6470056C56C /* MixpanelPeopleTests.swift in Sources */,
 				E1C61EBE1D22F9F60056C56C /* TestConstants.swift in Sources */,
 				E12406201D249B2500383635 /* MixpanelBaseTests.swift in Sources */,
