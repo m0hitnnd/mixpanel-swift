@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         var ADD_YOUR_MIXPANEL_TOKEN_BELOW_🛠🛠🛠🛠🛠🛠: String
         Mixpanel.initialize(token: "MIXPANEL_TOKEN", trackAutomaticEvents: true)
-        Mixpanel.mainInstance().useGzipCompression = true
         Mixpanel.mainInstance().loggingEnabled = true
 
         return true

@@ -441,7 +441,6 @@
 			);
 			mainGroup = E11594731CFF1491007F8B4F;
 			packageReferences = (
-				A26103B82D5B204000112150 /* XCRemoteSwiftPackageReference "GzipSwift" */,
 			);
 			productRefGroup = E115947E1CFF1491007F8B4F /* Products */;
 			projectDirPath = "";

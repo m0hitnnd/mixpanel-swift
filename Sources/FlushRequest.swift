@@ -34,18 +34,16 @@ class FlushRequest: Network {
             return nil
         }
 
-        var resourceHeaders = ["Content-Type": "application/json"]
-        if useGzipCompression {
-            resourceHeaders["Content-Encoding"] = "gzip"
-        }
-        resourceHeaders = resourceHeaders.merging(headers) {(_,new) in new }
+        var resourceHeaders: [String: String] = ["Content-Type": "application/json"].merging(headers) {(_,new) in new }
 
         let ipString = useIP ? "1" : "0"
         var resourceQueryItems: [URLQueryItem] = [URLQueryItem(name: "ip", value: ipString)]
         resourceQueryItems.append(contentsOf: queryItems)
+        
         var requestBody = requestData.data(using: .utf8)
-        if useGzipCompression, let data = requestBody {
-            requestBody = data.gzipped()
+        if useGzipCompression, let gzippedData = requestBody?.gzipped() {
+            requestBody = gzippedData
+            resourceHeaders["Content-Encoding"] = "gzip"
         }
 
         let resource = Network.buildResource(path: type.rawValue,

@@ -16,10 +16,6 @@ let package = Package(
     targets: [
         .target(
             name: "Mixpanel",
-            dependencies: [],
-            linkerSettings: [
-                .linkedLibrary("z")
-            ],
             path: "Sources",
             resources: [
                 .copy("Mixpanel/PrivacyInfo.xcprivacy")
