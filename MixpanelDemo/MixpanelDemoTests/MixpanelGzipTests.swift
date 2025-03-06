@@ -4,8 +4,14 @@ import zlib
 
 class MixpanelGzipTests: MixpanelBaseTests {
     
+    func testGzipEmptyData() {
+        let emptyData = Data()
+        let compressed = emptyData.gzipped()
+        XCTAssertNil(compressed, "Empty data should result in nil gzip output")
+    }
+    
     func testGzipNotSameAsOriginal() {
-        let originalString = String.randomString(length: 100)
+        let originalString = String.randomString(length: 1000)
         guard let originalData = originalString.data(using: .utf8) else {
             XCTFail("Failed to create data from string")
             return
@@ -15,18 +21,27 @@ class MixpanelGzipTests: MixpanelBaseTests {
             XCTFail( "Gzipped data from wrapper should not be nil")
             return
         }
-        XCTAssertNotEqual(
-            ourGzippedData,
-            originalData,
-            "Gzipped data should not be equal to original data"
+        
+        XCTAssertLessThan(
+            ourGzippedData.count,
+            originalData.count,
+            "Compressed data should be smaller than the original for highly repetitive data"
         )
     }
     
-    func testGzipEmptyData() {
-        let emptyData = Data()
-        let compressed = emptyData.gzipped()
-        XCTAssertNil(compressed, "Empty data should result in nil gzip output")
-    }
+    func testGzipHeader() {
+            let originalString = String.randomString(length: 100)
+            guard let originalData = originalString.data(using: .utf8),
+                  let compressedData = originalData.gzipped() else {
+                XCTFail("Failed to compress data")
+                return
+            }
+            
+            // Gzip data should start with 0x1f8b.
+            let header = compressedData.prefix(2)
+            let expectedHeader: [UInt8] = [0x1f, 0x8b]
+            XCTAssertEqual(Array(header), expectedHeader, "Gzip header should start with 1f8b")
+        }
     
     func testGzipIntegrationForInstance() {
         // Test Mixpanel integration
