@@ -45,6 +45,10 @@
 		86F86EF7224554B900B69832 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673ABE3921360CBE00B1784B /* Group.swift */; };
 		86F86F3622497F1200B69832 /* AutomaticEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151FA371E70DFB5002EF53D /* AutomaticEvents.swift */; };
 		86F86F3722497F2900B69832 /* AutomaticEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151FA371E70DFB5002EF53D /* AutomaticEvents.swift */; };
+		A5B4D4522D7A2FD600356C6A /* GzipHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4D4512D7A2FD600356C6A /* GzipHelper.swift */; };
+		A5B4D4532D7A2FD600356C6A /* GzipHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4D4512D7A2FD600356C6A /* GzipHelper.swift */; };
+		A5B4D4542D7A2FD600356C6A /* GzipHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4D4512D7A2FD600356C6A /* GzipHelper.swift */; };
+		A5B4D4552D7A2FD600356C6A /* GzipHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4D4512D7A2FD600356C6A /* GzipHelper.swift */; };
 		BB9614171F3BB87700C3EF3E /* ReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9614161F3BB87700C3EF3E /* ReadWriteLock.swift */; };
 		E10D118D1EC0F30900195CCD /* AutomaticEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151FA371E70DFB5002EF53D /* AutomaticEvents.swift */; };
 		E115948B1CFF1538007F8B4F /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E115948A1CFF1538007F8B4F /* Mixpanel.swift */; };
@@ -107,6 +111,7 @@
 		8625BEBA26D045CE0009BAA9 /* MPDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPDB.swift; sourceTree = "<group>"; };
 		868550AB2699096F001FCDDC /* MixpanelPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixpanelPersistence.swift; sourceTree = "<group>"; };
 		86F86E81224404BD00B69832 /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B4D4512D7A2FD600356C6A /* GzipHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GzipHelper.swift; sourceTree = "<group>"; };
 		BB9614161F3BB87700C3EF3E /* ReadWriteLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteLock.swift; sourceTree = "<group>"; };
 		E115947D1CFF1491007F8B4F /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11594821CFF1491007F8B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -254,6 +259,7 @@
 		E189D8FA1D5A692A007F3F29 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A5B4D4512D7A2FD600356C6A /* GzipHelper.swift */,
 				E11594981D01689F007F8B4F /* JSONHandler.swift */,
 				E1982BFE1D0AC2E2006B7330 /* Error.swift */,
 				E1D335CF1D3059A800E68E12 /* AutomaticProperties.swift */,
@@ -479,6 +485,7 @@
 				86F86EF7224554B900B69832 /* Group.swift in Sources */,
 				86F86ECA22443A4C00B69832 /* SessionMetadata.swift in Sources */,
 				86F86EC922443A4700B69832 /* Constants.swift in Sources */,
+				A5B4D4542D7A2FD600356C6A /* GzipHelper.swift in Sources */,
 				86F86EC722443A3C00B69832 /* FileLogging.swift in Sources */,
 				86F86EC622443A3100B69832 /* Error.swift in Sources */,
 				86F86EC522443A2C00B69832 /* People.swift in Sources */,
@@ -507,6 +514,7 @@
 				51DD56831D306B7B0045D3DB /* PrintLogging.swift in Sources */,
 				E115948E1D000709007F8B4F /* MixpanelInstance.swift in Sources */,
 				E151FA381E70DFB5002EF53D /* AutomaticEvents.swift in Sources */,
+				A5B4D4552D7A2FD600356C6A /* GzipHelper.swift in Sources */,
 				E1D335CE1D30578E00E68E12 /* Constants.swift in Sources */,
 				E115949F1D01BE14007F8B4F /* Flush.swift in Sources */,
 				E11594971D006022007F8B4F /* Network.swift in Sources */,
@@ -535,6 +543,7 @@
 				67FF65E521878416005161FA /* Group.swift in Sources */,
 				E12782BB1D4AB5CB0025FB05 /* PrintLogging.swift in Sources */,
 				E12782BC1D4AB5CB0025FB05 /* FileLogging.swift in Sources */,
+				A5B4D4532D7A2FD600356C6A /* GzipHelper.swift in Sources */,
 				E12782BD1D4AB5CB0025FB05 /* Logger.swift in Sources */,
 				E12782BE1D4AB5CB0025FB05 /* Mixpanel.swift in Sources */,
 				E12782BF1D4AB5CB0025FB05 /* MixpanelInstance.swift in Sources */,
@@ -563,6 +572,7 @@
 				67FF65E421878414005161FA /* Group.swift in Sources */,
 				E1F15FE01E64B60D00391AE3 /* MixpanelInstance.swift in Sources */,
 				E1F15FDF1E64B60D00391AE3 /* Mixpanel.swift in Sources */,
+				A5B4D4522D7A2FD600356C6A /* GzipHelper.swift in Sources */,
 				E1F15FDC1E64B60A00391AE3 /* AutomaticProperties.swift in Sources */,
 				E1F15FD91E64B60600391AE3 /* Logger.swift in Sources */,
 				E1F15FD61E64B5FC00391AE3 /* FlushRequest.swift in Sources */,
